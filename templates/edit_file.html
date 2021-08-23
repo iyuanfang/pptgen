@@ -1,0 +1,14 @@
+<!doctype html>
+<title>生成ppt</title>
+<h2>生成ppt</h2>
+<hr>
+<form action="/gen_file" method="post">
+    文档名称:
+    <input type="text" name="file_name" value="{{ file_name }}"> *请修改为待生成文件名不含后缀
+    <br>
+    文档内容:<br>
+    <textarea name="file_content" rows="20" cols="70">{{ file_content }}</textarea>
+    <br>
+    <input type="submit" value="生成"><br>
+    ***备注：填入要生成的文档名称，内容按照模板格式改写（原理就是从各个ppt中抽取内容，组成新ppt）
+</form>
