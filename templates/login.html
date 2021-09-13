@@ -1,0 +1,12 @@
+<!doctype html>
+<title>登录</title>
+<h2>用户登录 &nbsp;<a href="/regist">注册</a></h2>
+<hr>
+<form action="/login" method="post">
+    邮箱:
+    <input type="text" name="email" value="{{ email }}"> *请使用群脉邮箱
+    <br>
+    密码:<input type="password" name="pwd" value="{{ pwd }}">
+    <br>
+    <input type="submit" value="登录"><br>
+</form>

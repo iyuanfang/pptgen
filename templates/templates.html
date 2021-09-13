@@ -1,0 +1,13 @@
+<!doctype html>
+<title>文档模板</title>
+<h2>文档模板列表</h2>
+<hr>
+公司模板:<br>
+{% for template in templates %}
+<p><a href="/gen/{{template}}">{{template}}</a></p>
+{% endfor %}
+<br>
+个人模板：<br>
+{% for template in my_templates %}
+<p><a href="/gen/my/{{template}}">{{template}}</a></p>
+{% endfor %}
