@@ -1,13 +1,19 @@
 <!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>文档模板</title>
 <h2>文档模板列表</h2>
 <hr>
-公司模板:<br>
-{% for template in templates %}
-<p><a href="/gen/{{template}}">{{template}}</a></p>
-{% endfor %}
-<br>
-个人模板：<br>
-{% for template in my_templates %}
-<p><a href="/gen/my/{{template}}">{{template}}</a></p>
-{% endfor %}
+<div style="padding-left:15px">
+    <label>公司模板：</label><br>
+    {% for template in templates %}
+    <p><a href="/gen/{{template}}">{{template}}</a></p>
+    {% endfor %}
+    <br>
+    <label>个人模板：</label><br>
+    {% for template in my_templates %}
+    <p><a href="/gen/my/{{template}}">{{template}}</a></p>
+    {% endfor %}
+</div>

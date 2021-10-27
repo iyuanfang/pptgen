@@ -1,14 +1,24 @@
 <!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>生成ppt</title>
 <h2>生成ppt</h2>
 <hr>
-<form action="/gen_file" method="post">
-    文档名称:
-    <input type="text" name="file_name" value="{{ file_name }}"> *请修改为待生成文件名不含后缀
-    <br>
-    文档内容:<a href="/templates">载入模板</a><br> 
-    <textarea name="file_content" rows="20" cols="70">{{ file_content }}</textarea>
-    <br>
-    <input type="submit" value="生成"><br>
-    ***备注：填入要生成的文档名称，内容按照模板格式改写（原理就是从各个ppt中抽取内容，组成新ppt）
+<form action="/gen_file" method="post" style="padding-left:15px">
+    <div class="form-group">
+        <label>文档名称：</label>
+        <input type="text" name="file_name" value="{{ file_name }}">
+    </div>
+    <div class="form-group">
+        <label>文档内容：</label><a href="/templates">载入模板</a>
+    </div>
+    <div class="form-group">
+        <textarea name="file_content" rows="20" cols="44">{{ file_content }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-default">生成</button>
+    <div class="form-group">
+        ***备注：填入要生成的文档名称，内容按照模板格式改写（原理就是从各个ppt中抽取内容，组成新ppt）
+    </div>
 </form>
