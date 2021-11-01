@@ -4,8 +4,9 @@
 <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>登录</title>
-<h2>用户登录 &nbsp;<a href="/regist">注册</a></h2>
-<hr>
+<div class="page-header">
+    <h2 style="padding-left:15px">用户登录 &nbsp;<a href="/regist">注册</a></h2>
+</div>
 <form action="/login" method="post" style="padding-left:15px">
     <div class="form-group">
         <label>邮箱：</label><input type="text" name="email" value="{{ email }}"> *请使用群脉邮箱
@@ -13,5 +14,5 @@
     <div class="form-group">
         <label>密码：</label><input type="password" name="pwd" value="{{ pwd }}">
     </div>
-    <button type="submit">登录</button>
+    <button type="submit" class="btn btn-primary btn-lg">登录</button>
 </form>

@@ -49,6 +49,10 @@ def regist():
     session['user'] = user #存入session
     return redirect("/gen")
 
+@app.route("/help",methods=['get'])
+def help():
+    return render_template('help.html')
+
 @app.route("/regist",methods=['get'])
 def regist_form():
     return render_template('regist.html')
