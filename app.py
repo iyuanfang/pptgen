@@ -19,6 +19,13 @@ def gen_file():
     ppt_txt=open('gen\\users\\'+user+'\\'+file_name+".txt","w",encoding="utf-8")
     ppt_txt.write(file_content)
     ppt_txt.close()
+
+    isshare=request.form.get("isshare")
+    if isshare=="true":
+        templates_txt=open('gen\\templates\\'+file_name+".txt","w",encoding="utf-8")
+        templates_txt.write(file_content)
+        templates_txt.close()
+
     gen('gen/users/'+user+'/',file_name)
     return redirect("/users/"+user)
 
