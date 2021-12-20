@@ -7,6 +7,7 @@ def copy_slide(des, src_slide, placeholdertexts):
     """
     从源slide copy并根据placeholdertext赋值
     """
+    print(src_slide.slide_layout)
     curr_slide = des.slides.add_slide(src_slide.slide_layout)  # 直接使用src的layout
     # remove placeholder
     for placeholder in curr_slide.placeholders:
@@ -16,7 +17,6 @@ def copy_slide(des, src_slide, placeholdertexts):
     for shp in src_slide.shapes:
         copy_shape(shp, curr_slide.shapes)
 
-    # placeholdertexts = ["11111", "222222222", "33333", "4444444"]
     if placeholdertexts is not None:  # 定义文件中有设置placeholder的值
         index = 0
         for placeholder in curr_slide.placeholders:

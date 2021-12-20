@@ -26,7 +26,7 @@ def query_db(query, args=(), one=False):
 
 
 if __name__ == "__main__":
-    execute_db("create table users (id int primary key autoincrement, email varchar(20) NOT NULL UNIQUE, pwd varchar(10) NOT NULL, active int default 0,org int NOT NULL)")
+    execute_db("create table users (id int primary key autoincrement, email varchar(20) NOT NULL UNIQUE, pwd varchar(10) NOT NULL, active int default 1")
     execute_db(
         "create table org (id int primary key autoincrement, name varchar(100) NOT NULL,create_user int")
     # execute_db("insert into users(email,pwd) values ('yuanfang','123456')")

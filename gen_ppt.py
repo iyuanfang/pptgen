@@ -18,14 +18,13 @@ def get_placeholdertexts_from_line(line):
         return None
 
 
-def gen(folder,filename):
-    des = Presentation("gen/template.pptx")
-    lines = open(folder+filename+".txt", "r", encoding="UTF-8").readlines()
-    print(lines)
+def gen(src_folder,des_folder,filename):
+    des = Presentation(src_folder+"大纲/template.pptx") 
+    lines = open(des_folder+filename+".txt", "r", encoding="UTF-8").readlines()
     for line in lines:
         if line.strip() == '':
             continue
-        src = Presentation("./gen/"+get_name_from_line(line)+".pptx")
+        src = Presentation(src_folder+get_name_from_line(line)+".pptx")
         placeholdertexts = get_placeholdertexts_from_line(line)
         print(placeholdertexts)
         if "@" in line:  # 指定页面
@@ -34,7 +33,8 @@ def gen(folder,filename):
                 copy_ppt_index(des, src, int(index), placeholdertexts)
         else:  # 也支持placeholder，但会把所有slide的placeholder替换为指定值
             copy_ppt(des, src, placeholdertexts)
-    des.save(folder+filename+".pptx")
+
+    des.save(des_folder+filename+".pptx")
 
 
 if __name__ == '__main__':
